@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NearDelight</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    (function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Android users → Play Store
+      if (/android/i.test(userAgent)) {
+        window.location.replace("https://play.google.com/store/apps/details?id=com.neardelight.buyer");
+        return;
+      }
+
+      // iOS users → temporary fallback (no app yet)
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.replace("https://neardelight.com/ios-coming-soon");
+        return;
+      }
+
+      // Desktop / others → Website
+      window.location.replace("https://neardelight.com/");
+    })();
+  </script>
+</head>
+
+<body>
+  <p style="text-align:center; font-family:Arial; margin-top:50px;">
+    Redirecting to NearDelight...
+  </p>
+</body>
+</html>
